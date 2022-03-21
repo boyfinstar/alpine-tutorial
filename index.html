@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alpine</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+   <div x-data="{ count: 0 }">
+    <button x-on:click="count++">+</button>
+    <span x-text="count"></span>
+    <button x-on:click="count--">-</button>
+   </div>
+
+   <div x-data="{ open: false }">
+
+    <button x-on:click="open = ! open">show</button>
+
+    <p x-show="open" @click.away="open = false">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Reprehenderit deserunt enim error quae perferendis sint quasi autem nihil,
+        dolorem vero cupiditate. Ducimus fugiat doloremque nesciunt deleniti aut.
+        Voluptas, perferendis autem?
+    </p>
+   </div>
+</body>
+</html>
