@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+</head>
+<body class="bg-gray-100 h-screen">
+    <div class="container mx-auto">
+        <div class="w-3/5 mx-auto my-10"
+        x-data="{tab: 1,
+            active: 'border-b-2 border-blue-300',
+            none: 'hover:bg-blue-100'
+        }"
+        >
+
+            <div class="mb-1">
+                <ul class="flex">
+                    <li 
+                    @click="tab = 1"
+                    class="px-4 py-2 mr-1 rounded-t bg-white"
+                    :class="tab === 1 ? active : none"
+                    >Tab 1</li>
+
+                    <li
+                    @click="tab = 2"
+                    class="px-4 py-2 mr-1 rounded-t bg-white"
+                    :class="tab === 2 ? active : none"
+                    >Tab 2</li>
+
+                    <li
+                    @click="tab = 3"
+                    class="px-4 py-2 mr-1 rounded-t bg-white"
+                    :class="tab === 3 ? active : none">Tab 3</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-2">
+
+                <div
+                x-show="tab === 1"
+                >
+                    Tab 1 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ullam dolorum, veniam nemo consequatur iure culpa,
+                    deleniti tempora tempore beatae odio quo et incidunt
+                    aliquid eligendi necessitatibus a laudantium qui ipsa.
+                    nemo consequatur iure culpa,
+                    deleniti tempora tempore beatae odio quo et incidunt
+                    aliquid eligendi necessitatibus a laudantium qui ipsa.
+                </div>
+
+                <div
+                x-show="tab === 2">
+                    Tab 2 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ullam dolorum, veniam sa.
+                </div>
+
+                <div
+                x-show="tab === 3">
+                    Tab 3 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ullam dolorum, veniam nemo consequatur iure culpa,
+                    deleniti tempora tempore beatae odio quo et incidunt
+                    aliquid eligendi necessitatibus a laudantium qui ipsa.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
