@@ -13,45 +13,50 @@
   </head>
   <body class="container bg-gray-100 h-screen w-3/5 mx-auto scroll-smooth">
 
-    <div x-data="{ img: '' }" class="mx-auto">
+    <div class="mx-auto"
+    x-data="{ img: '' }"
+    >
         <div class="mx-auto text-justify mb-3">
             <span class="text-green-600 font-bold text-3xl">
                 Simple Gallary
             </span>
         </div>
-      <div x-show="img" style="display:none;" class="mb-3">
-        <img :src="img" width="763px" height="550px" x-transition:enter.duration.900ms x-transition:leave.duration.600ms  class="rounded-xl drop-shadow-lg"/>
+      <div 
+      x-show="img"
+        style="display: none;"
+       class="mb-3">
+        <img :src="img" width="763px" height="550px" class="rounded-xl drop-shadow-lg"/>
       </div>
 
       <hr />
 
       <div class="flex snap-x mx-auto">
         <div class="mr-1 snap-center">
-          <img src="img/01.jpg"  @click="img = 'img/01.jpg'" width="100px" height="75px"/>
+          <img src="img/01.jpg" @click="img = 'img/01.jpg'" width="100px" height="75px"/>
         </div>
         <div class="mr-1 snap-center">
-          <img src="img/02.jpg"  @click="img = 'img/02.jpg'" width="100px" height="75px"/>
+          <img src="img/02.jpg" @click="img = 'img/02.jpg'" width="100px" height="75px"/>
         </div>
         <div class="mr-1 snap-center">
-          <img src="img/03.jpg"  @click="img = 'img/03.jpg'" width="100px" height="75px"/>
+          <img src="img/03.jpg" @click="img = 'img/03.jpg'" width="100px" height="75px"/>
         </div>
         <div class="mr-1 snap-center">
-          <img src="img/04.jpg"  @click="img = 'img/04.jpg'" width="100px" height="75px"/>
+          <img src="img/04.jpg" @click="img = 'img/04.jpg'" width="100px" height="75px"/>
         </div>
         <div class="mr-1 snap-center">
-            <img src="img/05.jpg"  @click="img = 'img/05.jpg'" width="100px" height="75px"/>
+            <img src="img/05.jpg" @click="img = 'img/05.jpg'" width="100px" height="75px"/>
         </div>
         <div class="mr-1 snap-center">
-            <img src="img/06.jpg"  @click="img = 'img/06.jpg'" width="100px" height="75px"/>
+            <img src="img/06.jpg" @click="img = 'img/06.jpg'" width="100px" height="75px"/>
         </div>
         <div class="mr-1 snap-center">
-            <img src="img/07.jpg"  @click="img = 'img/07.jpg'" width="100px" height="75px"/>
+            <img src="img/07.jpg" @click="img = 'img/07.jpg'" width="100px" height="75px"/>
         </div>
         <div class="mr-1 snap-center">
-            <img src="img/08.jpg"  @click="img = 'img/08.jpg'" width="100px" height="75px"/>
+            <img src="img/08.jpg" @click="img = 'img/08.jpg'" width="100px" height="75px"/>
         </div>
         <div class="mr-1 snap-center">
-            <img src="img/09.jpg"  @click="img = 'img/09.jpg'" width="100px" height="75px"/>
+            <img src="img/09.jpg" @click="img = 'img/09.jpg'" width="100px" height="75px"/>
         </div>
       </div>
     </div>
