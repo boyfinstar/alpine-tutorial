@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 100%;
+    /* margin-left: auto;
+    margin-right: auto; */
+    height: 100vh;
+    background-color: red;
+}
+
+.float {
+    float: left;
+}
+
+.center {
+    justify-content: center;
+    display: block;
+}
+
+.center ul li{
+    text-decoration: none;
+}

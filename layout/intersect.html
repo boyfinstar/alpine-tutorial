@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="tailwind.config.js"></script> -->
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto">
+        <div class="w-3/5 mx-auto my-10 h-screen" x-data="{tab: 1,
+            active: 'border-b-2 border-blue-300',
+            none: 'hover:bg-blue-100'
+        }">
+            <div class="mb-1">
+                <ul class="flex">
+                    <li @click="tab = 1" class="px-4 py-2 mr-1 rounded-t bg-white" :class="tab === 1 ? active : none">
+                        Tab 1
+                    </li>
+
+                    <li @click="tab = 2" class="px-4 py-2 mr-1 rounded-t bg-white" :class="tab === 2 ? active : none">
+                        Tab 2
+                    </li>
+
+                    <li @click="tab = 3" class="px-4 py-2 mr-1 rounded-t bg-white" :class="tab === 3 ? active : none">
+                        Tab 3
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-2">
+                <div x-show="tab === 1">
+                    Tab 1 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ullam dolorum, veniam nemo consequatur iure culpa, deleniti tempora
+                    tempore beatae odio quo et incidunt aliquid eligendi necessitatibus
+                    a laudantium qui ipsa. nemo consequatur iure culpa, deleniti tempora
+                    tempore beatae odio quo et incidunt aliquid eligendi necessitatibus
+                    a laudantium qui ipsa.
+                </div>
+
+                <div x-show="tab === 2">
+                    Tab 2 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ullam dolorum, veniam sa.
+                </div>
+
+                <div x-show="tab === 3">
+                    Tab 3 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ullam dolorum, veniam nemo consequatur iure culpa, deleniti tempora
+                    tempore beatae odio quo et incidunt aliquid eligendi necessitatibus
+                    a laudantium qui ipsa.
+                </div>
+            </div>
+        </div>
+
+        <div class="w-4/5 mx-auto my-10 h-full bg-gray-300 rounded-sm" 
+        >
+            <div class="grid-cols-2 gap-2 flex justify-between">
+
+                <div
+                    x-data="{ss: false,
+                            move: 'delay-1000 -translate-y-10 ease-linear duration-700', 
+                            none: 'translate-y-10 ease-linear' }"
+                    
+                    class="grid justify-items-center pt-10 pb-10 w-2/5">
+
+                    <!-- <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                        Sorry, your browser does not support inline SVG.
+                    </svg> -->
+
+                    <img
+                        x-intersect.half="ss = false"
+                        x-intersect:leave="ss = false"
+                        src="../img/svg.svg" width="100" height="100"
+                        :class="ss = true ? move : none"
+                    >
+
+                    <!-- <img
+                        class="hover:-translate-y-10 duration-700 ease-out hover:ease-in"
+                        src="../img/svg.svg" width="100" height="100" 
+                    > -->
+                    
+                    <h2 x-show="ss" x-transition.scale.80>This should do something</h2>
+
+                    <div class="justify-center items-center">
+                        <img src="../img/svg.svg" alt=""
+                            x-data="{ spent: false,
+                                    animateUp() { if (this.spent) return; this.spent = true
+                                         animate({ elements: this.$el, transform: ['translateY(0px)', -30], easing: 'out-cubic', duration: 1500 }) } }"
+                                         x-init="false; let observer = new IntersectionObserver(([entry]) => { entry.isIntersecting &amp;&amp; animateUp();
+                                            observer.unobserve }, { threshold: [1] }); observer.observe($el)" style="transform: translateY(-30px);">
+                    </div>
+
+                </div>
+                
+                <div class="grid justify-items-center pt-10 pb-10 w-3/5">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+                        perspiciatis totam voluptas, aut numquam neque ducimus voluptate
+                        culpa cupiditate error mollitia hic quod pariatur porro labore
+                        aspernatur magnam reiciendis corporis!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
